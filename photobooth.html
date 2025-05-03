@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Photobox</title>
+  <title>Photobooth</title>
   <link rel="stylesheet" href="photobooth/style.css" />
 </head>
 <body>
@@ -12,7 +12,7 @@
     <div class="photobox">
       <div class="camera-section">
         <div class="video-wrapper">
-          <video id="video" autoplay></video>
+          <video id="video" autoplay playsinline></video>
           <canvas id="canvas"></canvas>
           <div id="countdown">3</div>
         </div>
@@ -45,6 +45,7 @@
           <div class="bottom-controls">
             <button id="startBtn">Take 📷</button>
             <button id="downloadBtn">Download💾</button>
+            <button id="switchCameraBtn" type="button">Switch Camera 🔄</button>
           </div>
         </div>
       </div>
