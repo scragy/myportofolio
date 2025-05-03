@@ -213,3 +213,29 @@ video {
 #video {
   display: none; /* Hide the video element */
 }
+
+button,
+#startBtn,
+#downloadBtn,
+#switchCameraBtn {
+  transition: transform 0.1s, box-shadow 0.1s, background 0.3s, color 0.3s;
+  
+}
+
+button:hover,
+#startBtn:hover,
+#downloadBtn:hover,
+#switchCameraBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: #f9f9f9;
+  color: #171619;
+}
+
+#filterSelect:hover,
+#frameSelect:hover,
+.controls select:hover {
+  background: #e0f7fa;
+  color: #171619;
+  transition: background 0.3s, color 0.3s;
+}
