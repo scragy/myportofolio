@@ -7,7 +7,39 @@ const countdownDisplay = document.getElementById('countdown');
 const downloadBtn = document.getElementById('downloadBtn');
 const shutterSound = document.getElementById('shutterSound');
 const frameSelect = document.getElementById('frameSelect');
+const switchBtn = document.getElementById("switchCameraBtn");
 
+let currentFacingMode = "user"; // default kamera depan
+let stream = null;
+
+async function startCamera(facingMode = "user") {
+  if (stream) {
+    stream.getTracks().forEach(track => track.stop());
+  }
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: { exact: facingMode } },
+      audio: false
+    });
+    const video = document.getElementById("video");
+    video.srcObject = stream;
+    await video.play();
+  } catch (err) {
+    alert("Tidak dapat mengakses kamera: " + err);
+  }
+}
+
+// Inisialisasi kamera saat halaman dimuat
+window.addEventListener("DOMContentLoaded", () => {
+  startCamera(currentFacingMode);
+
+  if (switchBtn) {
+    switchBtn.addEventListener("click", () => {
+      currentFacingMode = currentFacingMode === "user" ? "environment" : "user";
+      startCamera(currentFacingMode);
+    });
+  }
+});
 
 frameSelect.addEventListener('change', () => {
   if (frameSelect.value && frameSelect.value !== "none") {
@@ -23,16 +55,12 @@ const ctx = canvas.getContext('2d');
 let currentFilter = 'none';
 let capturedImages = [];
 
-navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
-  video.srcObject = stream;
+video.addEventListener('loadedmetadata', () => {
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
 
-  video.addEventListener('loadedmetadata', () => {
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-
-    // Mulai menggambar video, filter, dan frame secara real-time
-    renderLoop();
-  });
+  // Mulai menggambar video, filter, dan frame secara real-time
+  renderLoop();
 });
 
 function renderLoop() {
