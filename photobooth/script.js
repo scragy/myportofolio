@@ -18,10 +18,12 @@ async function startCamera(facingMode = "user") {
   }
   try {
     stream = await navigator.mediaDevices.getUserMedia({
-      video: { facingMode: { exact: facingMode } },
+      video: {
+        facingMode: { ideal: "user" }, // atau "environment" untuk kamera belakang
+        aspectRatio: 1 // square, agar proporsional
+      },
       audio: false
     });
-    const video = document.getElementById("video");
     video.srcObject = stream;
     await video.play();
   } catch (err) {
