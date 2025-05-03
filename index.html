@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head> 
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">My Portfolio</h1>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="burger" onclick="toggleMenu()">&#9776;</div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero">
+    <div class="container hero-content">
+      <h2>Hello, I'm <span>Raden Muhamad Egi</span></h2>
+      <p>Web Developer | Designer | Dreamer</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I am someone who is always eager to grow, constantly learning and pushing myself to become a better programmer every day. I believe that progress comes from persistence, curiosity, and the courage to keep improving, no matter how small the steps.
+      </p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>My Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+            <a href="project1.html" class="project-link">
+              <h3>Project 1: Flower</h3>
+              <p>Flower Animation</p>
+            </a>
+          </div>
+        <div class="project-card">
+          <a href="galery.html" class="project-link">
+          <h3>Project 2: Galery</h3>
+          <p>Moments of Us</p>
+        </a>
+        </div>
+        <div class="project-card">
+          <a href="photobooth.html" class="project-link">
+            <h3>Project 3: Photobooth</h3>
+            <p>Photobooth Ceritanya</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Raden Muhamad Egi Afippudin. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: #f1f1f1;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 170px; /* sesuaikan dengan tinggi header */
+}
+
+header {
+  background: #1e1e1e;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 24px;
+  color: #f1f1f1;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: #f1f1f1;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #64ffda;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-links li a:hover {
+  color: #64ffda;
+}
+
+
+
+
+.burger {
+  display: none;
+  font-size: 28px;
+  color: #f1f1f1;
+  cursor: pointer;
+}
+
+#hero {
+  background: #222;
+  padding: 5px 0;
+  text-align: center;
+}
+
+#hero span {
+  color: #64ffda;
+}
+
+#projects .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+
+.project-card:hover {
+  transform: translateY(-5px);
+  background-color: #333;
+}
+
+.project-link {
+  color: white;
+  text-decoration: none;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.project-link h3,
+.project-link p {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.project-link:hover h3,
+.project-link:hover p {
+  color: #079097; /* Warna hijau seperti Project 2 & 3 */
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input, form textarea {
+  padding: 10px;
+  background: #1e1e1e;
+  border: 1px solid #333;
+  color: #f1f1f1;
+  border-radius: 5px;
+}
+
+form button {
+  background: #64ffda;
+  color: #121212;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #52e0c4;
+}
+
+footer {
+  text-align: center;
+  background: #1e1e1e;
+  padding: 20px 0;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background: #1e1e1e;
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+
+

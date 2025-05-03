@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photobox</title>
+  <link rel="stylesheet" href="photobooth/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Photobooth Ceritanya📸</h1>
+    <div class="photobox">
+      <div class="camera-section">
+        <div class="video-wrapper">
+          <video id="video" autoplay></video>
+          <canvas id="canvas"></canvas>
+          <div id="countdown">3</div>
+        </div>
+        <div class="controls">
+          <div class="top-controls">
+            <select id="frameSelect">
+              <option value="none">Tanpa frame</option>
+              <option value="photobooth/frame0.png">Frame 1</option>
+              <option value="photobooth/frame1.png">Frame 2</option>
+              <option value="photobooth/frame2.png">Frame 3</option>
+              <option value="photobooth/frame3.png">Frame 4</option>
+              <option value="photobooth/frame4.png">Frame 5</option>
+              <option value="photobooth/frame5.png">Frame 6</option>
+              <option value="photobooth/frame6.png">Frame 7</option>
+              <option value="photobooth/frame7.png">Frame 8</option>
+            </select>
+            <select id="filterSelect">
+              <option value="none">Tanpa Filter</option>
+              <option value="softpink">Soft Pink</option>
+              <option value="vintage">Vintage Brown</option>
+              <option value="dramatic">Dramatis</option>
+              <option value="dramaticwarm">Dramatis Hangat</option>
+              <option value="warm">Hangat</option>
+              <option value="mono">Mono</option>
+              <option value="silvertone">Silvertone</option>
+              <option value="noir">Noir</option>
+              <option value="bwaesthetic">B&W Aesthetic</option>
+            </select>
+          </div>
+          <div class="bottom-controls">
+            <button id="startBtn">Take 📷</button>
+            <button id="downloadBtn">Download💾</button>
+          </div>
+        </div>
+      </div>
+      <div class="preview-section">
+        <div class="photos" id="photos"></div>
+      </div>
+    </div>
+  </div>
+  <audio id="shutterSound" src="https://www.soundjay.com/mechanical/camera-shutter-click-01.mp3"></audio>
+  <script src="photobooth/script.js"></script>
+</body>
+</html>
